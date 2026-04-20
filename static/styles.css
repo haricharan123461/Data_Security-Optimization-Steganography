@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0e1226;
+  color: #f2f5ff;
+}
+
+.topbar {
+  padding: 16px 20px;
+  background: linear-gradient(90deg, #182048, #1b2f67);
+  border-bottom: 1px solid #314079;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.topbar p {
+  margin: 4px 0 0;
+  color: #bfcbff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  padding: 14px;
+}
+
+.card {
+  background: #151b36;
+  border: 1px solid #2d3b72;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.chat-area {
+  display: grid;
+  gap: 12px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.92rem;
+}
+
+input,
+textarea,
+button {
+  border-radius: 8px;
+  border: 1px solid #3d4f91;
+  background: #0c1230;
+  color: #f2f5ff;
+  padding: 8px;
+}
+
+button {
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #2a3670;
+}
+
+.feed ul,
+#feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+#feed li {
+  border: 1px solid #2e3c70;
+  background: #101736;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.shared-image {
+  margin-top: 8px;
+  max-width: 280px;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 1px solid #314488;
+}
+
+.panel {
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+}
+
+.summary {
+  padding: 8px;
+  border: 1px solid #2e3f7c;
+  border-radius: 8px;
+  background: #101835;
+}
+
+.chart-wrap {
+  background: #0f1734;
+  border: 1px solid #2f3f7a;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#transitPacket code {
+  word-break: break-all;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+#stages {
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.trace-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.trace-list li {
+  border: 1px solid #2d3d74;
+  background: #0f1634;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th,
+td {
+  border: 1px solid #2d3c73;
+  padding: 6px;
+  text-align: left;
+}
+
+th {
+  background: #1a2550;
+}
+
+.muted {
+  color: #bac5f3;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+}

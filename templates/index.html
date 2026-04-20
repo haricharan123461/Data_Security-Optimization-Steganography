@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNA Steganography Real-Time Protocol</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>DNA Steganography + Comet Optimizer</h1>
+    <p>Real-time secure messaging with live encryption/decryption stages</p>
+  </header>
+
+  <main class="layout">
+    <section class="chat-area">
+      <div class="controls card">
+        <h2>Client Session</h2>
+        <div class="grid3">
+          <label>
+            Room
+            <input id="room" value="demo-room" />
+          </label>
+          <label>
+            Your Name
+            <input id="username" value="Client-A" />
+          </label>
+          <label>
+            Receiver
+            <input id="receiver" value="Client-B" />
+          </label>
+        </div>
+        <button id="joinBtn">Join Room</button>
+        <div id="presence" class="muted"></div>
+      </div>
+
+      <div class="composer card">
+        <h2>Secure Message</h2>
+        <textarea id="message" rows="4" placeholder="Type a message to encrypt and send..."></textarea>
+        <button id="sendBtn">Encrypt + Send</button>
+      </div>
+
+      <div class="composer card">
+        <h2>Secure Image</h2>
+        <input id="imageInput" type="file" accept="image/*" />
+        <button id="sendImageBtn">Encrypt + Send Image</button>
+        <div class="muted">Selected image is encrypted with DNA steganography pipeline and shared after optimized decryption.</div>
+      </div>
+
+      <div class="feed card">
+        <h2>Live Conversation</h2>
+        <ul id="feed"></ul>
+      </div>
+    </section>
+
+    <aside class="panel card">
+      <h2>Optimization & Stage Panel</h2>
+      <div id="bestSummary" class="summary muted">No message processed yet.</div>
+
+      <h3>Encrypted In Transit</h3>
+      <div id="transitPacket" class="summary muted">No encrypted packet yet.</div>
+
+      <h3>Size / Compression Chart</h3>
+      <div class="chart-wrap"><canvas id="sizeChart"></canvas></div>
+
+      <h3>Encryption Score Chart</h3>
+      <div class="chart-wrap"><canvas id="scoreChart"></canvas></div>
+
+      <h3>Payload Share Pie</h3>
+      <div class="chart-wrap"><canvas id="shareChart"></canvas></div>
+
+      <h3>Document Compliance Trace</h3>
+      <ul id="complianceTrace" class="trace-list"></ul>
+
+      <h3>Stage Trace</h3>
+      <ol id="stages"></ol>
+
+      <h3>Candidates</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Optimization Method</th>
+            <th>Score</th>
+            <th>GC</th>
+            <th>Run</th>
+            <th>ms</th>
+          </tr>
+        </thead>
+        <tbody id="candidates"></tbody>
+      </table>
+    </aside>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
